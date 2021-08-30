@@ -29,13 +29,13 @@ public class Student {
     }
 
     public Student(BigInteger id, String lastName, String name, String patronymic, String address, String phoneNumber, String faculty, int course, String group, String dateOfBirth) {
-        this(id, lastName, name, patronymic, address, phoneNumber,faculty, course, group)
+        this(id, lastName, name, patronymic, address, phoneNumber, faculty, course, group);
         this.dateOfBirth = new DateOfBirth(dateOfBirth);
     }
 
     public Student(BigInteger id, String lastName, String name, String patronymic, String address, String phoneNumber, String faculty, int course, String group, int dayBirth, int monthBirth, int yearBirth) {
-        this(id, lastName, name, patronymic, address, phoneNumber,faculty, course, group)
-        this
+        this(id, lastName, name, patronymic, address, phoneNumber, faculty, course, group);
+        this.dateOfBirth = new DateOfBirth(dayBirth, monthBirth, yearBirth);
     }
 
     class DateOfBirth {
@@ -78,6 +78,17 @@ public class Student {
             this.year = year;
         }
 
+        public int getDay() {
+            return day;
+        }
+
+        public int getMonth() {
+            return month;
+        }
+
+        public int getYear() {
+            return year;
+        }
     }
 
     public BigInteger getId() {
